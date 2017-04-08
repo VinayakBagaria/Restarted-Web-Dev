@@ -1,0 +1,123 @@
+/* position:
+1) static -  default; not affected by TLBR; positioned according to normal flow of the page
+2) relative - positioned relative to its normal position. Set TLBR to adjust away from normal position.
+3) fixed - positioned relative to the viewport, which means it stays in the same area even when the page is scrolled. TBLR to position the element.
+4) absolute - positioned according to the nearest positioned ancestor. If no such positioned ancestor, it moves according to the flow of the page.
+A positioned element is one whose position is anything other than static.
+*/
+
+body{
+  background-color: #c5e9e8;
+}
+
+.burger{
+  /* 0 is for TB, auto is for LR
+  Place the element in the centre of the document.
+  */
+  margin: 0 auto;
+	width: 250px;
+	position: relative;
+}
+
+/* Position the 2 cheese pieces below the nearest positioned ancestor - so absolute */
+.burger .cheesey{
+  position: absolute;
+  top:40px;
+  left: 30px;
+  /*Reduce the 2 pieces size horizontally and vertically*/
+  transform: scale(0.7,0.3);
+}
+
+.burger .cheesey .cheese{
+  /*initial rotation of -45deg*/
+  transform: rotate(-45deg);
+  /*change the point of origin of a transform -- 1st is horizontal and 2nd is vertical. Other options available*/
+  transform-origin: 100px 100px;
+}
+
+/*before and after to place the specified content where we want*/
+.burger .cheesey .cheese::before, .burger .cheesey .cheese::after{
+  content: "";
+  /*height and width which is initially scaled in .burger .cheesey*/
+  height: 200px;
+  width: 200px;
+  background: #ff0;
+}
+
+.burger .cheesey .cheese::before{
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(25deg);
+}
+
+.burger .cheesey .cheese::after{
+  position: absolute;
+  top:50px;
+  left:50px;
+  transform: rotate(-15deg);
+}
+
+.burger .patty{
+	background: #732626;
+	height: 75px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 70px;
+	border-radius: 125px 125px 125px 125px/25px 25px 25px 25px;
+}
+
+/* the top lighter shade patty*/
+.burger .patty::after{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 50px;
+	border-radius: 125px/25px;
+	background: #933;
+}
+
+.burger .bun{
+  background: #dd8c3c;
+  width: 250px;
+}
+
+.burger .bun.top{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  /*
+  horizontal/vertical
+  top-left
+  top-right
+  bottom-right
+  bottom-left
+  */
+  border-radius: 125px 125px 125px 125px/75px 75px 25px 25px;
+}
+
+.burger .bun.bottom{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 100px;
+	height: 75px;
+	border-radius: 125px 125px 125px 125px/25px 25px 35px 35px;
+}
+
+/*light small shade of cream before bun bottom*/ 
+.burger .bun.bottom::after{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 50px;
+	background: #f0d8a8;
+	border-radius: 125px/25px;
+}

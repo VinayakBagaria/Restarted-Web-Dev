@@ -1,0 +1,82 @@
+.toggleWrapper{
+  position: relative;
+  width: 100px;
+  margin: 0 auto;
+}
+
+.toggleWrapper input{
+  position: absolute;
+  left: -99em;
+}
+
+/*the visible body*/
+.toggle{
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  width: 120px;
+  height: 50px;
+  /*amount of space above and below the inline element ,i.e.., for inline or inline-block*/
+  line-height: 50px;
+  background: #d21626;
+}
+
+.toggle::before,.toggle::after{
+  position: absolute;
+  font-size: 14px;
+  z-index: 2;
+  /*transition of these elements on change*/
+  transition: all 200ms;
+}
+
+/*initial stage when the input is not checked and also after every toggle*/
+.toggle::before{
+  content: 'OFF';
+  left:20px;
+  color: #d21626;
+}
+
+.toggle::after{
+  content: 'ON';
+  right: 20px;
+  color:#fff;
+}
+
+/*the box made*/
+.toggle_handler{
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  background: #fff;
+  width: 62px;
+  height:44px;
+  border-radius: 4px;
+  /*displacement from top and left*/
+  top:3px;
+  left: 3px;
+  /*transition of the box representing toggle handler*/
+  transition: all 200ms;
+}
+
+input:checked + .toggle{
+  /*make full background as green when input box is checked*/
+  background: #66b317;
+}
+
+input:checked + .toggle::before{
+  /*text color of OFF*/
+  color:#fff;
+}
+
+input:checked + .toggle::after{
+  /*text color of ON*/
+  color:#66b317;
+}
+
+input:checked + .toggle .toggle_handler{
+  /*width of toggle handler on input check ,i.e.. , going to ON*/
+	width: 54px;
+  /*translate toggle handler*/
+	transform: translateX(60px);
+}
