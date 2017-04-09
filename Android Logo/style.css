@@ -15,6 +15,7 @@ div div{
   height: 100px;
   border-radius: 110px 110px 0 0;
   position: relative;
+  transition: all 0.2s ease-in;
 }
 
 .l_eye,.r_eye{
@@ -63,6 +64,7 @@ div div{
 .l_arm,.r_arm,.l_leg,.r_leg{
   position: absolute;
   width: 50px;
+  transition: all 0.2s ease-in;
 }
 
 .l_arm,.r_arm{
