@@ -1,0 +1,80 @@
+.toggleWrapper{
+  position: relative;
+  width: 10px;
+  margin: 0 auto;
+}
+
+.toggleWrapper input{
+  position: absolute;
+  left: -99em;
+}
+
+.toggle{
+  display: inline-block;
+  width: 150px;
+  height: 50px;
+  background: #E8E8E8;
+  border-radius: 25px;
+}
+
+.toggle_handler{
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  background: #fff;
+  left: 1px;
+  width: 50px;
+  height:50px;
+  border-radius: 25px;
+  /*transition of the face representing toggle handler*/
+  transition: all 600ms;
+}
+
+.l_eye,.r_eye{
+  background:#E8E8E8;
+  position: absolute;
+  top:13px;
+  height: 10px;
+  width: 8px;
+  border-radius: 4px 6px;
+}
+
+.l_eye{
+  left: 12px;
+}
+
+.r_eye{
+  right: 12px;
+}
+
+.smile{
+  position: absolute;
+  top: 32px;
+  left: 18px;
+  height: 2px;
+  width: 16px;
+  background:#E8E8E8;
+}
+
+input:checked + .toggle{
+  /*make full background as green when input box is checked*/
+  background: #00008B;
+}
+
+input:checked + .toggle .toggle_handler{
+  /*width of toggle handler on input check ,i.e.. , going to ON*/
+	width: 54px;
+  /*translate toggle handler*/
+	transform: translateX(95px) rotateY(360deg);
+}
+
+input:checked + .toggle .l_eye,
+input:checked + .toggle .r_eye,
+input:checked + .toggle .smile{
+  background: #00008B;
+}
+
+input:checked + .toggle .smile{
+  height: 10px;
+  border-radius: 0 0 20px 20px;
+}
