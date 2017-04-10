@@ -113,3 +113,12 @@ div div{
   transform: translate(0,5px);
   transition: all 200ms;
 }
+
+.l_leg:hover{
+  transform: rotate(30deg) translate(-30px,-2px);
+}
+
+
+.r_leg:hover{
+  transform: rotate(-30deg) translate(30px,-2px);
+}
