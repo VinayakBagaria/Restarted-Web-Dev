@@ -1,0 +1,23 @@
+body{
+  background-color: #FF5294;
+}
+
+.cards{
+  margin: 0 auto;
+  width: 250px;
+  position: relative;
+}
+
+.monday{
+  position: absolute;
+  top:100px;
+  height: 350px;
+  width: 250px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.textContainer{
+  text-align: center;
+  padding-top: 130px;
+}
