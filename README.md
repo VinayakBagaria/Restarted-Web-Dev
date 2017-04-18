@@ -1,6 +1,6 @@
 # Restarted-Web-Dev
 
-Some CSS tryouts to bring out easy and awesome animations and designs. `No extra stuff used other than ones available.`
+Some CSS tryouts to bring out easy and awesome animations and designs. `No extra modules/packages used other than ones available.`
 
 ## Ambivalence II Monday
 
@@ -10,7 +10,7 @@ Inspired from https://dribbble.com/shots/2313705-Ambivalence-ll-Monday
 
 ## Android Logo
 
-GIF says it all
+GIF says it all. Android is now humanly.
 
 ![Demo gif](https://github.com/VinayakBagaria/Restarted-Web-Dev/blob/master/android.gif)
 
