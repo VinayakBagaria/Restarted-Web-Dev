@@ -1,39 +1,42 @@
 .heart{
-  background-color: red;
+  display: none;
   height: 30px;
   width: 30px;
+  background-color: red;
   position: relative;
   margin: 0 auto;
-  top:10px;
+  top:40%;
   transform: rotate(-45deg);
 }
 
-.heart::before,.heart::after{
+.heart:before,.heart:after{
   content: "";
-  background-color: red;
-  border-radius: 50%;
   height: 30px;
   width: 30px;
+  top:40%;
+  background-color: red;
+  border-radius: 50%;
   position: absolute;
 }
 
-.heart::before{
+.heart:before{
   top:-15px;
-  left:0;
+  left:0px;
 }
 
-.heart::after{
-  top:0;
-  left: 15px;
+.heart:after{
+  top:0px;
+  left:15px;
 }
 
 .poop{
+  display: none;
   background-color: brown;
   height: 30px;
   width: 30px;
   position: relative;
   margin: 0 auto;
-  top:100px;
+  top:35%;
   transform: rotate(-45deg);
 }
 
