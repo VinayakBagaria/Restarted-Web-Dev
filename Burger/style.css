@@ -110,7 +110,7 @@ body{
 	border-radius: 125px 125px 125px 125px/25px 25px 35px 35px;
 }
 
-/*light small shade of cream before bun bottom*/ 
+/*light small shade of cream before bun bottom*/
 .burger .bun.bottom::after{
 	content: '';
 	position: absolute;
