@@ -1,0 +1,59 @@
+html,body{
+  height:100%;
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+}
+
+.grass, .sky, .road{
+  position: relative;
+}
+
+.sky{
+  height: 40%;
+  background: skyblue;
+}
+
+.grass{
+  height: 30%;
+  background: green;
+}
+
+.road{
+  height: 30%;
+  background: dimgrey;
+  box-sizing: border-box;
+  border-top: 10px solid grey;
+  border-bottom: 10px solid grey;
+}
+
+.lines{
+  box-sizing: border-box;
+  position: absolute;
+  top:75%;
+  width: 100%;
+  border: 4px dashed white;
+}
+
+/*animations*/
+
+.mario{
+  position: absolute;
+  top:-4px;
+  left: 0px;
+  animation-name: drive;
+  animation-duration: 2.5s;
+  /*forwards will apply from in keyframes to the object*/
+  animation-fill-mode: both;
+  /* delay for when the animation kicks in*/
+  animation-delay: 2s;
+}
+
+@keyframes drive{
+  from{
+    transform: translateX(200px);
+  }
+  to{
+    transform: translate(1280px);
+  }
+}
