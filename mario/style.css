@@ -30,7 +30,7 @@ html,body{
 .lines{
   box-sizing: border-box;
   position: absolute;
-  top:75%;
+  top:50%;
   width: 100%;
   border: 4px dashed white;
 }
@@ -39,21 +39,35 @@ html,body{
 
 .mario{
   position: absolute;
-  top:-4px;
+  top:-40px;
   left: 0px;
   animation-name: drive;
   animation-duration: 2.5s;
-  /*forwards will apply from in keyframes to the object*/
+  /*forwards will apply from in keyframes to the object after the delay
+    backwards will be at from position and then execute after the delay, it doesn't
+    stop at to position
+    Use both to use both the modes*/
   animation-fill-mode: both;
-  /* delay for when the animation kicks in*/
-  animation-delay: 2s;
+  /* delay for when the animation kicks in
+  animation-delay: 2s;*/
+  animation-iteration-count: infinite;
+}
+
+.luigi{
+  position: absolute;
+  top:45px;
+  animation-name: drive;
+  animation-direction: reverse;
+  animation-duration: 3s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
 }
 
 @keyframes drive{
   from{
-    transform: translateX(200px);
+    transform: translateX(0px);
   }
   to{
-    transform: translate(1280px);
+    transform: translate(1260px);
   }
 }
