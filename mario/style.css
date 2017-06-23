@@ -42,7 +42,7 @@ html,body{
   top:-40px;
   left: 0px;
   animation-name: drive;
-  animation-duration: 2.5s;
+  animation-duration: 3s;
   /*forwards will apply from in keyframes to the object after the delay
     backwards will be at from position and then execute after the delay, it doesn't
     stop at to position
@@ -51,6 +51,8 @@ html,body{
   /* delay for when the animation kicks in
   animation-delay: 2s;*/
   animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation: jump 0.3s 1.2s
 }
 
 .luigi{
@@ -65,9 +67,47 @@ html,body{
 
 @keyframes drive{
   from{
-    transform: translateX(0px);
+    transform: translateX(-100px);
   }
   to{
-    transform: translate(1260px);
+    transform: translate(1380px);
+  }
+}
+
+.cloud{
+  position: absolute;
+}
+
+.cloud:nth-child(1){
+  width: 200px;
+  top:120px;
+  opacity: 0.5;
+  animation:wind 80s linear infinite reverse;
+}
+
+.cloud:nth-child(2){
+  width: 300px;
+  top:0px;
+  animation:wind 50s linear infinite reverse;
+}
+
+@keyframes wind{
+  from{
+    left: -300px;
+  }
+  to{
+    left: 100%;
+  }
+}
+
+@keyframes jump {
+  0%{
+    top:-40px;
+  }
+  50%{
+    top:-100px;
+  }
+  100%{
+    top:-40px;
   }
 }
